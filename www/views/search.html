@@ -1,0 +1,28 @@
+<ion-view>
+	<ion-content>
+		<label class="item item-input">
+		  <input type="search" placeholder="Search" ng-model="searchCtrl.searchKey" ng-keyup="searchCtrl.search();">
+		</label>
+
+		<ion-list class="list">
+		<a href="#/moviecard">
+			<ion-item ng-repeat="movie in searchCtrl.movieList" on-tap="searchCtrl.taptest(movie);">
+		  	<div style="float: left;">
+		  		<p>{{movie.Title}}</p>
+		  		<span>({{movie.Year}})</span>
+		  	</div>
+		    <ion-option-button class="button-royal">
+		    	<i class="icon ion-ios-heart"></i>
+		    </ion-option-button>
+		  </ion-item>
+
+		  <ion-infinite-scroll ng-if="searchCtrl.canShowMore" on-infinite="searchCtrl.loadMore();" distance="10%">
+		  </ion-infinite-scroll>
+		</a>
+		  
+		</ion-list>
+		<ion-list ng-if="searchCtrl.noResults">
+			<ion-item>No Results Found</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

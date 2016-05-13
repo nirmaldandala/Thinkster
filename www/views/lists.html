@@ -1,0 +1,17 @@
+<ion-view>
+  <ion-header-bar>
+    <ion-nav-bar>
+      <ion-nav-title>{{listCtrl.pageTitle}}</ion-nav-title>
+    </ion-nav-bar>
+  </ion-header-bar>
+	<ion-content>
+		<ion-list class="list">
+			<ion-item ng-repeat="movie in listCtrl.favoriteList">
+		  		<p>{{movie.Title}}</p>
+		  	<ion-option-button ng-click="listCtrl.deleteMovie(movie.imdbID);" class="button-royal">
+		    	<i class="icon ion-ios-close-outline"></i>
+		  </ion-option-button>
+		  </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

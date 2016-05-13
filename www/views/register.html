@@ -1,0 +1,27 @@
+<div ng-show="authCtrl.error">
+  <span>{{ authCtrl.error.message }}</span>
+</div>
+<form ng-submit="authCtrl.register()">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Email</span>
+    <input type="email" ng-model="authCtrl.user.email" placeholder="Email">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Password</span>
+    <input type="password" ng-model="authCtrl.user.password" placeholder="Password">
+  </label>
+  <input type="hidden" ng-model="authCtrl.page.register">
+  <button class="button button-block button-positive">
+    Sign up
+  </button>
+</form>
+<p>
+  <h1 class="title" style="text-align: center">Already a user?</h1>
+  <div class="row">
+    <div class="col text-center">
+      <button class="button button-balanced" ng-click="authCtrl.taketologin();">
+        Login
+      </button>
+    </div>
+  </div>
+</p>

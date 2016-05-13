@@ -1,0 +1,49 @@
+<ion-pane>
+	<div class="main">
+	  <div class="sidebar">
+
+	    <div class="slack-name">
+	      <h2>FireSlack</h2>
+	    </div>
+
+	    <div class="channel-list">
+		  <div class="list-head">Channels</div>
+		  <div class="channel" ng-repeat="channel in channelsCtrl.channels">
+		    <a ui-sref="channels.messages({channelId: channel.$id})" ui-sref-active="selected"># {{ channel.name }}</a>
+		  </div>
+		  <div class="channel create">
+		    <a ui-sref="channels.create">+ create channel</a>
+		  </div>
+		</div>
+
+	    <div class="my-info">
+	      <img class="user-pic" ng-src="{{ channelsCtrl.getGravatar(channelsCtrl.profile.$id) }}" />
+	      <div class="user-info">
+	        <div class="user-name">
+	          {{ channelsCtrl.profile.displayName }}
+	        </div>
+
+	        <div class="options">
+	          <a ui-sref="profile">edit profile</a>
+	          <button ng-click="channelsCtrl.addContact()">Add Contact</button>
+	          <p>Contacts</p>
+	          <ul>
+	          	<li ng-repeat="contact in channelsCtrl.contacts"> 
+	          		<input type='checkbox' value='{{ contact.phoneNumbers[0].value }}'></input>
+					{{ contact.phoneNumbers[0].value }} 
+				</li>
+	          </ul>
+	          /
+	          <a href="#" ng-click="channelsCtrl.logout()">logout</a>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <ul>
+	  	
+	  </ul>
+	  <div class="message-pane">
+		<ui-view></ui-view>
+	  </div>
+	</div>
+</ion-pane>
