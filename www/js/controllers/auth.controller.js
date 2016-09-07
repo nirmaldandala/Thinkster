@@ -17,6 +17,7 @@ slackclone.controller('AuthCtrl', function(Auth, $state, $rootScope){
 
     authCtrl.login = function (){
 	  Auth.$authWithPassword(authCtrl.user).then(function (auth){
+      localStorage.setItem('userId', auth.uid);
 	  	// Default state is Login Page. Register is controlled by isRegister flag
 	  	authCtrl.isRegister ? $state.go('profile') : $state.go('channels');
 	  }, function (error){

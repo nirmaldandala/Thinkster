@@ -16,7 +16,7 @@ slackclone.config(function($stateProvider, $urlRouterProvider) {
       resolve: {
         requireNoAuth: function($state, Auth, $rootScope){
           return Auth.$requireAuth().then(function(auth){
-            $rootScope.userId = auth.uid;
+            localStorage.setItem('userId', auth.uid);
             $state.go('channels');
           }, function(error){
             return;
