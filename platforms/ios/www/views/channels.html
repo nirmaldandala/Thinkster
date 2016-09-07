@@ -6,15 +6,25 @@
 	      <h2>FireSlack</h2>
 	    </div>
 
-	    <div class="channel-list">
+	    <!-- <div class="channel-list">
 		  <div class="list-head">Channels</div>
 		  <div class="channel" ng-repeat="channel in channelsCtrl.channels">
 		    <a ui-sref="channels.messages({channelId: channel.$id})" ui-sref-active="selected"># {{ channel.name }}</a>
 		  </div>
-		  <div class="channel create">
-		    <a ui-sref="channels.create">+ create channel</a>
-		  </div>
-		</div>
+		</div> -->
+
+		<div class="list">
+			<div class="list-head">Channels</div>
+	        <a ng-repeat="channel in channelsCtrl.channels" 
+	           href="#/{{channel.$id}}"
+	           class="item item-thumbnail-left" ng-click="channelsCtrl.gotoMsg(channel.channelName)">
+	          <img ng-src="http://www.goldtalk.com/forum/images/avatars/all/characters/80x80_films0018.jpg">
+	          <h2>{{ channel.channelName }}</h2>
+	        </a>
+	        <div class="channel create">
+		    	<a ui-sref="channels.create">+ create channel</a>
+		  	</div>
+      	</div>
 
 	    <div class="my-info">
 	      <img class="user-pic" ng-src="{{ channelsCtrl.getGravatar(channelsCtrl.profile.$id) }}" />

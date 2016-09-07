@@ -1,6 +1,6 @@
 slackclone.controller('MessagesCtrl', function(profile, channelName, messages){
     var messagesCtrl = this;
-    messagesCtrl.messages = messages;
+    messagesCtrl.messages = channelMessages;
 	messagesCtrl.channelName = channelName;
 	messagesCtrl.message = '';
 	messagesCtrl.sendMessage = function (){

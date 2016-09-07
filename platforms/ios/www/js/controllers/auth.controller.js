@@ -1,5 +1,6 @@
-slackclone.controller('AuthCtrl', function(Auth, $state){
+slackclone.controller('AuthCtrl', function(Auth, $state, $rootScope){
     var authCtrl = this;
+    $rootScope.channelList = [];
     authCtrl.isRegister = false;
     authCtrl.user = {
       email: '',

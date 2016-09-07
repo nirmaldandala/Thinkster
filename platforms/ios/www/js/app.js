@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var slackclone = angular.module('slackclone', ['ionic', 'firebase', 'ui.router', 'ngCordova', 'ngStorage', 'angular-md5']);
+var slackclone = angular.module('slackclone', ['ngMaterial', 'ionic', 'firebase', 'ui.router', 'ngCordova', 'ngStorage', 'angular-md5']);
 
 slackclone.constant('FirebaseUrl', 'https://slackclonetest2.firebaseio.com/');
 
@@ -55,6 +55,21 @@ slackclone.config(function($stateProvider, $urlRouterProvider) {
       url: '/create',
       templateUrl: 'views/create.html',
       controller: 'ChannelsCtrl as channelsCtrl'
+    })
+    $stateProvider.state('search', {
+      url: '/search',
+      controller: 'SearchCtrl as searchCtrl',
+      templateUrl: 'views/search.html',
+    })
+    $stateProvider.state('moviecard', {
+      url: '/moviecard',
+      controller: 'SearchCtrl as searchCtrl',
+      templateUrl: 'views/moviecard.html',
+    })
+    $stateProvider.state('lists', {
+      url: '/lists',
+      controller: 'ListCtrl as listCtrl',
+      templateUrl: 'views/lists.html',
     })
     $stateProvider.state('profile', {
       url: '/profile',

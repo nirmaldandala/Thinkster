@@ -2,14 +2,15 @@
   <span>{{ authCtrl.error.message }}</span>
 </div>
 <form ng-submit="authCtrl.login()">
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Email</span>
-    <input type="email" ng-model="authCtrl.user.email" placeholder="Email">
-  </label>
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Password</span>
-    <input type="password" ng-model="authCtrl.user.password" placeholder="Password">
-  </label>
+<md-input-container class="md-block">
+    <label class="input-label">Email</label>
+    <input type="email" ng-model="authCtrl.user.email">
+</md-input-container>
+
+<md-input-container class="md-block">
+    <label class="input-label">Password</label>
+    <input type="password" ng-model="authCtrl.user.password">
+</md-input-container>
   <button class="button button-block button-positive">
     Login
   </button>

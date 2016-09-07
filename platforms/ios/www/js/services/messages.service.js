@@ -1,5 +1,5 @@
 slackclone.factory('Messages', function($firebaseArray, FirebaseUrl){
-    var channelMessagesRef = new Firebase(FirebaseUrl+'/	'+channelId+'/channelMessages');
+    var channelMessagesRef = new Firebase(FirebaseUrl+'/'+channelId+'/channelMessages');
 
     return {
       forChannel: function(channelId){

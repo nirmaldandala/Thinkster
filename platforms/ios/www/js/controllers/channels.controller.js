@@ -5,35 +5,34 @@ slackclone.controller('ChannelsCtrl', function($state, Auth, Users, FirebaseUrl,
 	channelsCtrl.channels = channels;
 	channelsCtrl.getDisplayName = Users.getDisplayName;
 	channelsCtrl.contacts = [];
-	channelsCtrl.newChannel = {
-	  name: '',
-	  admin: '',
-	  users: userList
-	};
-	channelsCtrl.createChannel = function(){
-	  channelsCtrl.channels.$add(channelsCtrl.newChannel).then(function(ref){
-	    $state.go('channels.messages', {channelId: ref.key()});  
-	  });
-	  channelsCtrl.addChanneltoUser();
-	};
 
-	channelsCtrl.addChanneltoUser = function() {
+	channelsCtrl.addChanneltoUser = function(channelname) {
 		var uid = $rootScope.userId;
 		var ref = new Firebase(FirebaseUrl);
 		var userRef  = ref.child("users");
 		var channelRef = ref.child("channels");
 		var channelNameID = userRef.child(uid+'/channels/').push();
 		var channelNameIDKey = channelNameID.key();
+		$rootScope.channelList.push(channelNameIDKey);
 		var channelObj = {};
 		channelObj[channelNameIDKey] = true;
 		userRef.child(uid+"/channels/").update(channelObj);
 		var users = {};
 		users[uid] = true;
 		channelRef.child(channelNameIDKey).update({
-						channel_admin : uid, 
-						channel_name  : '100days',
+						channelAdmin : uid, 
+						channelName  : channelname,
+						channelMessages: true,
 						users
 		});
+		userRef.child(uid+'/channels/'+channelNameIDKey).update({
+			            channelAdmin : uid,
+			            channelName  : channelname
+		});
+	};
+
+	channelsCtrl.gotoMsg = function (channelname) {
+		$state.go('channels.messages');
 	};
 
 	channelsCtrl.getContacts = function() {
