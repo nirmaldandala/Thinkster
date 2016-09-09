@@ -7,7 +7,7 @@ slackclone.controller('ChannelsCtrl', function($state, Auth, Users, FirebaseUrl,
 	channelsCtrl.contacts = [];
 
 	channelsCtrl.addChanneltoUser = function(channelname) {
-		var uid = $rootScope.userId;
+		var uid = localStorage.getItem('userId');
 		var ref = new Firebase(FirebaseUrl);
 		var userRef  = ref.child("users");
 		var channelRef = ref.child("channels");
@@ -20,7 +20,7 @@ slackclone.controller('ChannelsCtrl', function($state, Auth, Users, FirebaseUrl,
 		var users = {};
 		users[uid] = true;
 		channelRef.child(channelNameIDKey).update({
-						channelAdmin : uid, 
+						channelAdmin : uid,
 						channelName  : channelname,
 						channelMessages: true,
 						users

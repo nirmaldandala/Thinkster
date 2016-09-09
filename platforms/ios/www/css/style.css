@@ -7,3 +7,11 @@
 .image-holder {
 	margin: 0 auto !important;
 }
+
+.addUserIcon {
+	font-size: 3em;
+    position: absolute;
+    right: 6%;
+    top: 45%;
+    cursor: pointer;
+}

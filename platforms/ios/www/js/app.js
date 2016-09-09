@@ -16,7 +16,7 @@ slackclone.config(function($stateProvider, $urlRouterProvider) {
       resolve: {
         requireNoAuth: function($state, Auth, $rootScope){
           return Auth.$requireAuth().then(function(auth){
-            $rootScope.userId = auth.uid;
+            localStorage.setItem('userId', auth.uid);
             $state.go('channels');
           }, function(error){
             return;
@@ -60,6 +60,15 @@ slackclone.config(function($stateProvider, $urlRouterProvider) {
       url: '/search',
       controller: 'SearchCtrl as searchCtrl',
       templateUrl: 'views/search.html',
+    })
+    $stateProvider.state('contacts', {
+      url: '/contacts',
+      templateUrl: 'views/contacts.html',
+      controller: 'ContactsCtrl as contactsCtrl'
+    })
+    $stateProvider.state('channelview', {
+      url: '/channelview',
+      templateUrl: 'views/channelview.html',
     })
     $stateProvider.state('moviecard', {
       url: '/moviecard',

@@ -15,15 +15,15 @@
 
 		<div class="list">
 			<div class="list-head">Channels</div>
-	        <a ng-repeat="channel in channelsCtrl.channels" 
-	           href="#/{{channel.$id}}"
+	        <a ng-repeat="channel in channelsCtrl.channels"
+	           href="#" ui-sref="channelview"
 	           class="item item-thumbnail-left" ng-click="channelsCtrl.gotoMsg(channel.channelName)">
 	          <img ng-src="http://www.goldtalk.com/forum/images/avatars/all/characters/80x80_films0018.jpg">
 	          <h2>{{ channel.channelName }}</h2>
 	        </a>
 	        <div class="channel create">
-		    	<a ui-sref="channels.create">+ create channel</a>
-		  	</div>
+		    		<a ui-sref="channels.create">+ create channel</a>
+		  		</div>
       	</div>
 
 	    <div class="my-info">
@@ -38,9 +38,9 @@
 	          <button ng-click="channelsCtrl.addContact()">Add Contact</button>
 	          <p>Contacts</p>
 	          <ul>
-	          	<li ng-repeat="contact in channelsCtrl.contacts"> 
+	          	<li ng-repeat="contact in channelsCtrl.contacts">
 	          		<input type='checkbox' value='{{ contact.phoneNumbers[0].value }}'></input>
-					{{ contact.phoneNumbers[0].value }} 
+					{{ contact.phoneNumbers[0].value }}
 				</li>
 	          </ul>
 	          /
@@ -50,7 +50,7 @@
 	    </div>
 	  </div>
 	  <ul>
-	  	
+
 	  </ul>
 	  <div class="message-pane">
 		<ui-view></ui-view>
