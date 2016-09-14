@@ -1,10 +1,7 @@
 <ion-pane>
-	<div class="main">
-	  <div class="sidebar">
-
-	    <div class="slack-name">
-	      <h2>FireSlack</h2>
-	    </div>
+  <ion-header-bar>
+  	<i ui-sref="contacts" class="ion-plus-circled addUserIcon"></i>
+  </ion-header-bar>
 
 	    <!-- <div class="channel-list">
 		  <div class="list-head">Channels</div>
@@ -12,15 +9,31 @@
 		    <a ui-sref="channels.messages({channelId: channel.$id})" ui-sref-active="selected"># {{ channel.name }}</a>
 		  </div>
 		</div> -->
+	<ion-content>
+		<md-content>
+			<md-list flex>
+				<md-list-item class="md-2-line channelCard" ui-sref="channelview" ng-repeat="channel in channelsCtrl.channels" ng-click="channelsCtrl.gotoMsg(channel.channelName)">
+	          		<img ng-src="/img/avatar.jpeg" class="md-avatar" alt="Megan Darling" />
+			        <div class="md-list-item-text">
+			            <h3>{{ channel.channelName }}</h3>
+			            <p>Secondary text</p>
+			        </div>
+			        <md-divider></md-divider>
+		        </md-list-item>
+				<!-- <md-list-item ng-repeat="channel in channelsCtrl.channels">
+					<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch layout="row">
+						<a href="#" ui-sref="channelview"
+				           class="item item-thumbnail-left" ng-click="channelsCtrl.gotoMsg(channel.channelName)">
+				          <img ng-src="http://www.goldtalk.com/forum/images/avatars/all/characters/80x80_films0018.jpg">
+				          <h2>{{ channel.channelName }}</h2>
+			        	</a>
+					</md-card>
+				</md-list-item> -->
+			</md-list>
+		</md-content>
+	</ion-content>
 
 		<div class="list">
-			<div class="list-head">Channels</div>
-	        <a ng-repeat="channel in channelsCtrl.channels"
-	           href="#" ui-sref="channelview"
-	           class="item item-thumbnail-left" ng-click="channelsCtrl.gotoMsg(channel.channelName)">
-	          <img ng-src="http://www.goldtalk.com/forum/images/avatars/all/characters/80x80_films0018.jpg">
-	          <h2>{{ channel.channelName }}</h2>
-	        </a>
 	        <div class="channel create">
 		    		<a ui-sref="channels.create">+ create channel</a>
 		  		</div>
@@ -55,5 +68,4 @@
 	  <div class="message-pane">
 		<ui-view></ui-view>
 	  </div>
-	</div>
 </ion-pane>

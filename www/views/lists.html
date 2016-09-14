@@ -5,13 +5,61 @@
     </ion-nav-bar>
   </ion-header-bar>
 	<ion-content>
-		<ion-list class="list">
-			<ion-item ng-repeat="movie in listCtrl.favoriteList">
-		  		<p>{{movie.Title}}</p>
-		  	<ion-option-button ng-click="listCtrl.deleteMovie(movie.imdbID);" class="button-royal">
-		    	<i class="icon ion-ios-close-outline"></i>
-		  </ion-option-button>
-		  </ion-item>
-		</ion-list>
+		<md-content>
+		  	<md-list flex>
+		        <md-list-item ng-repeat="item in listCtrl.favoriteList" class="md-3-line">
+		        	<md-card class="movieCard" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+				        <md-card-title>
+				          <md-card-title-text>
+				            <span class="md-headline"><h2>{{item.Title}}</h2></span>
+							<!-- <div class="movieInfo" layout="row" layout-align="space-between center">
+								<div>{{item.Year}}</div>
+								
+								<div>{{item.Runtime}}</div>
+								
+								<div>{{item.Genre}}</div>
+							</div> -->
+							<div class="movieDesc" layout="column">
+								<div> {{item.Plot | limitTo:channelsviewCtrl.numlimit}} </div>
+								<div><a ng-click="channelsviewCtrl.readMore()">Read More</a></div>
+							</div>
+							<!-- <div class="movieLogo" layout="row" layout-align="space-between center">
+									<div class="imdb">
+										<img src="../img/imdbmod.png">
+									</div>
+									<div class="rotten">
+										<img src="../img/certified.png">
+									</div>
+									<div class="metacritic">
+										<img src="../img/metacritic.png">
+									</div>	
+								</div>
+								<div class="ratingDesc" layout="row" layout-align="space-between center">
+									<div>
+										<p>{{item.imdbRating}}</p>
+									</div>
+									<div>
+										<p>{{item.tomatoMeter}}</p>
+									</div>
+									<div>
+										<p>{{item.Metascore}}</p>
+									</div>
+								</div>
+							</div> -->
+				            <!-- <md-button>Remove</md-button> -->
+				          </md-card-title-text>
+				          <md-card-title-media>
+				            <div class="md-media-lg card-media">
+				            	<img width="165" height="135" src="{{item.Poster}}">
+				            </div>
+				            <md-card-actions class="shareMovie" layout="row">
+			            		<md-button class="md-raised">Share</md-button>
+			        		</md-card-actions>
+				          </md-card-title-media>
+				        </md-card-title>
+				      </md-card>
+		        </md-list-item>  
+		  	</md-list>
+	  </md-content>
 	</ion-content>
 </ion-view>

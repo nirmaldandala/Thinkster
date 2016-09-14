@@ -69,6 +69,7 @@ slackclone.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('channelview', {
       url: '/channelview',
       templateUrl: 'views/channelview.html',
+      controller: 'ChannelsViewCtrl as channelsviewCtrl'
     })
     $stateProvider.state('moviecard', {
       url: '/moviecard',
