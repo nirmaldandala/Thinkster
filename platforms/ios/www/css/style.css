@@ -1,5 +1,10 @@
 /* Empty. Add your own CSS if you like */
 
+body {
+	font-family: 'Montserrat', serif;
+    font-size: 1em;
+}
+
 .item-image {
 	width: 81%;
 }
@@ -14,4 +19,129 @@
     right: 6%;
     top: 45%;
     cursor: pointer;
+}
+
+.fullMovieCard h3 {
+	margin: 0 auto;
+}
+
+.fullMovieCard .movieInfo div {
+	font-size: 0.75em;
+}
+
+.fullMovieCard .moviePlot {
+	width: 50%;
+}
+
+.fullMovieCard .movieInfo .moviePoster{
+	width: 50%;
+}
+
+.movieCard {
+	width: 100%;
+	padding: 0;
+	box-shadow: 0 0 10px #585775;
+}
+
+.channelCard img {
+	width: 60px !important;
+	height: 60px !important;
+}
+
+.movieCard md-card-title {
+	padding: 20px 10px 10px 10px;
+}
+
+.movieCard .md-media-lg {
+	width: 140px;
+	height: 190px;
+	box-shadow: 0 0 5px #c2c2c2;
+}
+
+.movieCard .md-headline {
+	margin-right: 20px;
+}
+
+.movieCard .md-headline h2{
+	text-align: center;
+	color: #585775;
+	font-size: 1.0em !important;
+}
+
+.movieCard md-card-actions {
+	margin: 0 auto;
+}
+
+.movieCard md-card-title-text {
+	margin-right: 10px;
+	position: relative;
+    bottom: 15px;
+}
+
+.movieCard .movieInfo div {
+	font-size: 0.75em;
+	width: 100px;
+}
+
+.movieCard .movieDesc {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 0.8em;
+}
+
+.movieCard .movieDesc .readMore {
+	font-size: 0.75em;
+}
+
+.movieCard .ratingDesc p {
+	text-align: center;
+	font-size: 1.5em;
+	margin-top: 8px;
+	margin-left: 5px;
+}
+
+.movieCard .movieLogo .imdb{
+	width: 40px;
+	margin-left: 3px;
+	margin-top: 2px;
+}
+
+.movieCard .movieLogo .rotten{
+	width: 27px;
+}
+
+.movieCard .movieLogo .metacritic{
+	width: 30px;
+}
+
+.movieCard .shareMovie {
+	margin-top: 5px;
+}
+
+.movieCard .shareMovie button{
+	background: #72d572 !important;
+    width: 100%;
+    cursor: pointer;
+}
+
+.searchMovie img {
+	border-radius: initial !important;
+	height: 100% !important;
+}
+
+.md-icon-button {
+	margin: 0 6px 0 7px!important;
+	padding: 0 !important;
+}
+
+.shareicon md-icon{
+	background: #0f9d58;
+}
+
+.loveicon md-icon{
+	background: rgb(255,82,82);
+}
+
+.openicon md-icon{
+	background: rgb(16,108,200);
 }

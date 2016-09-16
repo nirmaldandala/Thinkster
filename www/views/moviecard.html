@@ -10,13 +10,61 @@
             <div>{{movieCardInfo.Runtime}}</div>
             <div>{{movieCardInfo.Genre}}</div>
         </div>
-        <div class="movieDesc" layout="row" layout-align="space-between center">
-          <!-- <div class="moviePlot"><p>{{movieCardInfo.Plot}}</p></div> -->
-          <div class="moviePoster">
-            <md-media-lg>
-              <img src="{{movieCardInfo.Poster}}">
-            </md-media-lg>
-          </div>
+        <div layout="row" layout-align="space-between center">
+            <div class="fullMoviePlot">
+               <div class="movieText">
+                <p class="moviePlot">{{movieCardInfo.Plot}}</p>
+                <p class="movieDetails">Director: {{movieCardInfo.Director}}</p>
+              </div>
+              <div class="ratings" layout="row" layout-align="space-around center">
+                <div layout="column" layout-align="center">
+                  <div class="imdb">
+                    <img src="../img/imdbmod.png">
+                  </div>
+                  <div class="ratingnumber" style="margin-top: 22px;">
+                    <p>{{movieCardInfo.imdbRating}}</p>
+                  </div>
+                </div>
+                <div layout="column" layout-align="center">
+                  <div class="rotten">
+                    <img src="../img/certified.png">
+                  </div>
+                  <div class="ratingnumber">
+                    <p>{{movieCardInfo.tomatoMeter}}</p>
+                  </div>
+                </div>
+                <div layout="column" layout-align="center">
+                  <div class="metacritic">
+                    <img src="../img/metacritic.png">
+                  </div>
+                  <div class="ratingnumber">
+                    <p>{{movieCardInfo.Metascore}}</p>
+                  </div>
+                </div>
+            </div>
+            </div>
+            <div class="moviePoster" layout="column" layout-align="center">
+                <md-media-lg>
+                  <img src="{{movieCardInfo.Poster}}">
+                </md-media-lg>
+            </div>
+        </div>
+        <div layout="row" layout-align="space-between center">
+            <div class="actionButton">
+              <md-card-actions class="shareMovie" layout="row">
+                <md-button class="md-raised hatebutton">HATED IT!!</md-button>
+              </md-card-actions>
+            </div>
+            <div class="actionButton">
+              <md-card-actions class="shareMovie" layout="row">
+                <md-button ng-click="searchCtrl.shareMovie(movieCardInfo);" class="md-raised">LOVED IT!!</md-button>
+              </md-card-actions>
+            </div>
+        </div>
+        <div class="addComment" layout="row">
+          <md-input-container>
+              <input type="text" placeholder="Say something.....">
+          </md-input-container>
         </div>
       </md-card>
     </md-content>

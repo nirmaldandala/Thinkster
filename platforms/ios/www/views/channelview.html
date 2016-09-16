@@ -5,38 +5,58 @@
   <ion-content>
 	  <md-content>
 	  	 <md-list flex>
-	        <md-list-item class="md-3-line">
-	        	<h1>Image 01</h1>
-	        </md-list-item>
-	        <md-divider ></md-divider>
-	        <md-list-item class="md-3-line">
-	        	<h1>Image 01</h1>
-	        </md-list-item>
-	        <md-divider ></md-divider>
-	        <md-list-item class="md-3-line">
-	        	<h1>Image 01</h1>
-	        </md-list-item>
-	        <md-divider ></md-divider>
-	        <md-list-item class="md-3-line">
-	        	<h1>Image 01</h1>
-	        </md-list-item>
-	        <md-divider ></md-divider>
-	        <md-list-item class="md-3-line">
-	        	<h1>Image 01</h1>
-	        </md-list-item>
-	        <md-divider ></md-divider>
-	        <md-list-item class="md-3-line">
-	        	<h1>Image 01</h1>
-	        </md-list-item>
-	        <md-divider ></md-divider>
-	        <md-list-item class="md-3-line">
-	        	<h1>Image 01</h1>
-	        </md-list-item>
-	        <md-divider ></md-divider>
-	        <md-list-item class="md-3-line">
-	        	<h1>Image 01</h1>
-	        </md-list-item>
-	        <md-divider ></md-divider>
+	        <md-list-item ng-repeat="item in channelsviewCtrl.movieData" class="md-3-line">
+	        	<md-card class="movieCard" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline"><h2>{{item.Title}}</h2></span>
+						<div class="movieInfo" layout="row" layout-align="space-around center">
+							<div>{{item.Year}}</div>
+							
+							<div>{{item.Runtime}}</div>
+							
+							<div>{{item.Genre}}</div>
+						</div>
+						<div class="movieDesc" layout="column">
+							<div> {{item.Plot | limitTo:channelsviewCtrl.numlimit}} </div>
+							<div class="readMore"></div>
+						</div>
+						<div class="movieLogo" layout="row" layout-align="space-around center">
+								<div class="imdb">
+									<img src="../img/imdbmod.png">
+								</div>
+								<div class="rotten">
+									<img src="../img/certified.png">
+								</div>
+								<div class="metacritic">
+									<img src="../img/metacritic.png">
+								</div>	
+							</div>
+							<div class="ratingDesc" layout="row" layout-align="space-around center">
+								<div>
+									<p>{{item.imdbRating}}</p>
+								</div>
+								<div>
+									<p>{{item.tomatoMeter}}</p>
+								</div>
+								<div>
+									<p>{{item.Metascore}}</p>
+								</div>
+							</div>
+						</div>
+			            <!-- <md-button>Remove</md-button> -->
+			          </md-card-title-text>
+			          <md-card-title-media>
+			            <div class="md-media-lg card-media">
+			            	<img src="{{item.Poster}}">
+			            </div>
+			            <md-card-actions class="shareMovie" layout="row">
+			            	<md-button class="md-raised">Share</md-button>
+			        	</md-card-actions>
+			          </md-card-title-media>
+			        </md-card-title>
+			      </md-card>
+	        </md-list-item>  
 	  	 </md-list>
 	  </md-content>
   </ion-content>
