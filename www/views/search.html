@@ -8,10 +8,14 @@
 		<md-content>
 			<md-list flex>
 				<md-list-item ui-sref="moviecard" ng-repeat="movie in searchCtrl.movieList" on-tap="searchCtrl.taptest(movie);" class="md-3-line searchMovie">
-					<img ng-if="{{movie.Poster !== 'N/A'}}" ng-src="{{movie.Poster}}" class="md-avatar" alt="Movie small poster image" />
-					<div class="md-list-item-text">
-			            <h3>{{ movie.Title }}</h3>
-			            <p>({{movie.Year}})</p>
+					<div layout="row" class="md-list-item-text">
+						<div>
+			            	<img src="{{movie.Poster}}" width="50" height="50">
+			            </div>
+			            <div class="thumbnailText">
+			            	<h3>{{ movie.Title }}</h3>
+			            	<p>({{movie.Year}})</p>
+			            </div>
 			        </div>
 				</md-list-item>
 			</md-list>

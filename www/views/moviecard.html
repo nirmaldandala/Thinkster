@@ -3,18 +3,20 @@
     <md-content>
       <md-card class="fullMovieCard">
         <md-card-title>
-          <h3>{{ movieCardInfo.Title }} ({{movieCardInfo.Year}})</h3>
+          <h2>{{ movieCardInfo.Title }} ({{movieCardInfo.Year}})</h2>
         </md-card-title>
-        <div class="movieInfo" layout="row" layout-align="space-around center">
+        <!-- <div class="movieInfo" layout="row" layout-align="space-around center">
             <div>{{movieCardInfo.Year}}</div>
             <div>{{movieCardInfo.Runtime}}</div>
             <div>{{movieCardInfo.Genre}}</div>
-        </div>
+        </div> -->
         <div layout="row" layout-align="space-between center">
             <div class="fullMoviePlot">
                <div class="movieText">
-                <p class="moviePlot">{{movieCardInfo.Plot}}</p>
-                <p class="movieDetails">Director: {{movieCardInfo.Director}}</p>
+                <p class="moviePlot plotInfo">{{movieCardInfo.Plot}}</p>
+                <p class="movieDetails"><span>Runtime: </span>{{movieCardInfo.Runtime}}</p><p class="movieDetails"><span>Genre: </span>{{movieCardInfo.Genre}}</p>
+                <p class="movieDetails"><span>Director: </span> {{movieCardInfo.Director}}</p>
+                <p class="movieDetails castInfo"><span>Cast: </span>  {{movieCardInfo.Actors}}</p>
               </div>
               <div class="ratings" layout="row" layout-align="space-around center">
                 <div layout="column" layout-align="center">
@@ -52,18 +54,18 @@
         <div layout="row" layout-align="space-between center">
             <div class="actionButton">
               <md-card-actions class="shareMovie" layout="row">
-                <md-button class="md-raised hatebutton">HATED IT!!</md-button>
+                <md-button class="md-raised hatebutton">MEH!!</md-button>
               </md-card-actions>
             </div>
             <div class="actionButton">
               <md-card-actions class="shareMovie" layout="row">
-                <md-button ng-click="searchCtrl.shareMovie(movieCardInfo);" class="md-raised">LOVED IT!!</md-button>
+                <md-button ng-click="searchCtrl.shareMovie(movieCardInfo);" class="md-raised">SHARE</md-button>
               </md-card-actions>
             </div>
         </div>
         <div class="addComment" layout="row">
           <md-input-container>
-              <input type="text" placeholder="Say something.....">
+              <input type="text" placeholder="Say something to Share.....">
           </md-input-container>
         </div>
       </md-card>

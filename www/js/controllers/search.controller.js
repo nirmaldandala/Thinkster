@@ -22,7 +22,18 @@ slackclone.controller('SearchCtrl', function ($rootScope, $ionicHistory, omdbget
   };
 
   searchCtrl.shareMovie = function(movie) {
-    StorageService.add(movie);
+    var favList = StorageService.getAll(), imdbIds = [];
+    if(favList) {
+      for (var i = 0; i < favList.length; i++) {
+        imdbIds.push(favList[i].imdbID);
+      };
+      if(imdbIds.indexOf(movie.imdbID) == -1) {
+        StorageService.add(movie);
+      }
+    }
+    else{
+      StorageService.add(movie);
+    }
   };
 
   searchCtrl.taptest = function(movie) {
