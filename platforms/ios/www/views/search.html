@@ -8,34 +8,35 @@
 		<md-content>
 			<md-list flex>
 				<md-list-item ui-sref="moviecard" ng-repeat="movie in searchCtrl.movieList" on-tap="searchCtrl.taptest(movie);" class="md-3-line searchMovie">
-					<img ng-if="{{movie.Poster !== 'N/A'}}" ng-src="{{movie.Poster}}" class="md-avatar" alt="Movie small poster image" />
-					<div class="md-list-item-text">
-			            <h3>{{ movie.Title }}</h3>
-			            <p>({{movie.Year}})</p>
+					<div layout="row" class="md-list-item-text">
+						<div>
+			            	<img src="{{movie.Poster}}" width="50" height="50">
+			            </div>
+			            <div class="thumbnailText">
+			            	<h3>{{ movie.Title }}</h3>
+			            	<p>({{movie.Year}})</p>
+			            </div>
 			        </div>
 				</md-list-item>
 			</md-list>
 		</md-content>
-
-		<!-- <ion-list class="list">
-			<a href="#/moviecard">
-				<ion-item ng-repeat="movie in searchCtrl.movieList" on-tap="searchCtrl.taptest(movie);">
-			  	<div style="float: left;">
-			  		<p>{{movie.Title}}</p>
-			  		<span>({{movie.Year}})</span>
-			  	</div>
-			    <ion-option-button class="button-royal">
-			    	<i class="icon ion-ios-heart"></i>
-			    </ion-option-button>
-			  </ion-item>
-
-			  <ion-infinite-scroll ng-if="searchCtrl.canShowMore" on-infinite="searchCtrl.loadMore();" distance="10%">
-			  </ion-infinite-scroll>
-			</a>
-		  
-		</ion-list> -->
 		<ion-list ng-if="searchCtrl.noResults">
 			<ion-item>No Results Found</ion-item>
 		</ion-list>
 	</ion-content>
 </ion-view>
+<ion-footer>
+  	<div class="footerTabs tabs-striped tabs-icon-top">
+	    <div class="tabs">
+	        <a class="tab-item active" href="#/channels">
+	            <i class="icon ion-android-people"></i> Chats
+	        </a>
+	        <a class="tab-item" href="#/lists">
+	            <i class="icon ion-ios-heart-outline"></i> Favorites
+	        </a>
+	        <a class="tab-item" href="#/search">
+	            <i class="icon ion-ios-search"></i> Search
+	        </a>
+	    </div>
+	</div>
+</ion-footer>

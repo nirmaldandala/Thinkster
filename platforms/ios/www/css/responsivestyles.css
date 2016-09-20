@@ -1,0 +1,63 @@
+@media (max-width: 700px) {
+	#mobileLandscape {
+		display: none;
+	}
+
+	#mobilePortrait {
+		display: block;
+	}
+
+}
+
+@media (min-width: 701px) {
+	#mobileLandscape {
+		display: block;
+	}
+
+	#mobilePortrait {
+		display: none;
+	}
+
+	#mobileLandscape .fullMoviePlot {
+		margin-top: 0;
+	}
+}
+/*For iPhone 6*/
+
+@media (max-width: 412px){
+	.fullMovieCard .moviePoster{
+		height: auto;
+	}
+
+	.fullMovieCard .moviePoster md-media-lg {
+		width: 95%;
+	}
+
+	.movieCard md-card-title-text  {
+		width: 50%;
+	}
+
+	.movieCard .md-media-lg {
+		height: 210px;
+	}
+}
+
+/*For iPhone 5*/
+
+@media (max-width: 320px) {
+	.fullMovieCard .moviePoster{
+		height: auto;
+	}
+
+	.fullMovieCard .moviePoster md-media-lg {
+		width: 86%;
+	}
+
+	.movieCard .movieInfo div {
+		font-size: 0.4em;
+	}
+
+	.movieCard .md-headline h2 {
+		font-size: 0.9em !important;
+	}
+}

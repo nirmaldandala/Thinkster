@@ -1,6 +1,5 @@
 <ion-view>
   <ion-header-bar>
-  	<i ui-sref="contacts" class="ion-plus-circled addUserIcon"></i>
   </ion-header-bar>
   <ion-content>
 	  <md-content>
@@ -21,15 +20,15 @@
 							<div> {{item.Plot | limitTo:channelsviewCtrl.numlimit}} </div>
 							<div class="readMore"></div>
 						</div>
-						<div class="movieLogo" layout="row" layout-align="space-around center">
+							<div class="movieLogo" layout="row" layout-align="space-around center">
 								<div class="imdb">
-									<img src="../img/imdbmod.png">
+									<img src="img/imdbmod.png">
 								</div>
 								<div class="rotten">
-									<img src="../img/certified.png">
+									<img src="img/certified.png">
 								</div>
 								<div class="metacritic">
-									<img src="../img/metacritic.png">
+									<img src="img/metacritic.png">
 								</div>	
 							</div>
 							<div class="ratingDesc" layout="row" layout-align="space-around center">
@@ -44,7 +43,6 @@
 								</div>
 							</div>
 						</div>
-			            <!-- <md-button>Remove</md-button> -->
 			          </md-card-title-text>
 			          <md-card-title-media>
 			            <div class="md-media-lg card-media">
@@ -60,4 +58,19 @@
 	  	 </md-list>
 	  </md-content>
   </ion-content>
+  <ion-footer>
+  	<div class="footerTabs tabs-striped tabs-icon-top">
+	    <div class="tabs">
+	        <a class="tab-item active" href="#/channels">
+	            <i class="icon ion-android-people"></i> Chats
+	        </a>
+	        <a class="tab-item" href="#/lists">
+	            <i class="icon ion-ios-heart-outline"></i> Favorites
+	        </a>
+	        <a class="tab-item" href="#/search">
+	            <i class="icon ion-ios-search"></i> Search
+	        </a>
+	    </div>
+	</div>
+</ion-footer>
 </ion-view>

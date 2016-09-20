@@ -1,27 +1,20 @@
 
   <ion-content>
     <md-content>
-      <md-card class="fullMovieCard">
-        <md-card-title>
+      <md-card id="mobilePortrait" class="fullMovieCard">
+        <md-card-title class="cardTitle">
           <h2>{{ movieCardInfo.Title }} ({{movieCardInfo.Year}})</h2>
         </md-card-title>
-        <!-- <div class="movieInfo" layout="row" layout-align="space-around center">
-            <div>{{movieCardInfo.Year}}</div>
-            <div>{{movieCardInfo.Runtime}}</div>
-            <div>{{movieCardInfo.Genre}}</div>
-        </div> -->
-        <div layout="row" layout-align="space-between center">
-            <div class="fullMoviePlot">
-               <div class="movieText">
-                <p class="moviePlot plotInfo">{{movieCardInfo.Plot}}</p>
-                <p class="movieDetails"><span>Runtime: </span>{{movieCardInfo.Runtime}}</p><p class="movieDetails"><span>Genre: </span>{{movieCardInfo.Genre}}</p>
-                <p class="movieDetails"><span>Director: </span> {{movieCardInfo.Director}}</p>
-                <p class="movieDetails castInfo"><span>Cast: </span>  {{movieCardInfo.Actors}}</p>
-              </div>
-              <div class="ratings" layout="row" layout-align="space-around center">
+        <div layout="column" layout-align="center">
+            <div class="moviePoster" layout="column" layout-align="center">
+                <md-media-lg>
+                  <img src="{{movieCardInfo.Poster}}">
+                </md-media-lg>
+            </div>
+            <div class="ratings" layout="row" layout-align="space-around center">
                 <div layout="column" layout-align="center">
                   <div class="imdb">
-                    <img src="../img/imdbmod.png">
+                    <img src="img/imdbmod.png">
                   </div>
                   <div class="ratingnumber" style="margin-top: 22px;">
                     <p>{{movieCardInfo.imdbRating}}</p>
@@ -29,7 +22,7 @@
                 </div>
                 <div layout="column" layout-align="center">
                   <div class="rotten">
-                    <img src="../img/certified.png">
+                    <img src="img/certified.png">
                   </div>
                   <div class="ratingnumber">
                     <p>{{movieCardInfo.tomatoMeter}}</p>
@@ -37,18 +30,12 @@
                 </div>
                 <div layout="column" layout-align="center">
                   <div class="metacritic">
-                    <img src="../img/metacritic.png">
+                    <img src="img/metacritic.png">
                   </div>
                   <div class="ratingnumber">
                     <p>{{movieCardInfo.Metascore}}</p>
                   </div>
                 </div>
-            </div>
-            </div>
-            <div class="moviePoster" layout="column" layout-align="center">
-                <md-media-lg>
-                  <img src="{{movieCardInfo.Poster}}">
-                </md-media-lg>
             </div>
         </div>
         <div layout="row" layout-align="space-between center">
@@ -63,45 +50,93 @@
               </md-card-actions>
             </div>
         </div>
-        <div class="addComment" layout="row">
-          <md-input-container>
-              <input type="text" placeholder="Say something to Share.....">
-          </md-input-container>
+        <div class="fullMoviePlot">
+            <div class="movieText">
+                <p class="moviePlot plotInfo">{{movieCardInfo.Plot}}</p>
+                <p class="movieDetails"><span>Runtime: </span>{{movieCardInfo.Runtime}}</p><p class="movieDetails"><span>Genre: </span>{{movieCardInfo.Genre}}</p>
+                <p class="movieDetails"><span>Director: </span> {{movieCardInfo.Director}}</p>
+                <p class="movieDetails castInfo"><span>Cast: </span>  {{movieCardInfo.Actors}}</p>
+            </div>
         </div>
-      </md-card>
-    </md-content>
-  </ion-content>
-
-
-<!--   <ion-content>
-
-    <div class="list card">
-      <div class="image-holder item item-image">
-        <img src="{{ movieCardInfo.Poster}}" width="200" height="380">
-      </div>
-
-      <div class="item">
-        <span style="float: left">
-          <img src="img/imdbmod.png" width="39" height="25">
-          <span><h1>{{movieCardInfo.imdbRating}}</h1></span>
-        </span>
-        <!-- <span style="float: right" ng-if="movieCardInfo.tomatoImage === 'certified' || movieCardInfo.tomatoImage === 'fresh'"> -->
-<!--          <span style="float: right" ng-if="movieCardInfo.tomatoImage !== 'rotten'">
-          <img src="img/certified.png" width="25" height="25">
-          <span><h1>{{movieCardInfo.tomatoMeter}} %</h1></span>
-        </span> 
-        <span style="float: right" ng-if="movieCardInfo.tomatoImage === 'rotten'">
-          <img src="img/rotten.png" width="25" height="25">
-          <span><h1>{{movieCardInfo.tomatoMeter}} %</h1></span>
-        </span> 
-      </div>
-      <div class="item" style="margin: 5px 15px 5px 15px">
-        <span style="float: left; cursor: pointer;" ng-click="searchCtrl.shareMovie();">
-          <i class="icon ion-heart-broken" style="font-size: 48px; color: #575656"></i>
-        </span>
-        <span style="float: right; cursor: pointer" ng-click="searchCtrl.shareMovie(movieCardInfo);">
-          <i class="icon ion-heart" style="font-size: 48px; color: rgba(255, 52, 52, 0.98)"></i>
-        </span>
-      </div>
+    </md-card>
+    <md-card id="mobileLandscape" class="fullMovieCard">
+    <md-card-title>
+        <h2>{{ movieCardInfo.Title }} ({{movieCardInfo.Year}})</h2>
+    </md-card-title>
+    <div layout="row" layout-align="space-between center">
+        <div class="fullMoviePlot">
+            <div class="movieText">
+                <p class="moviePlot plotInfo">{{movieCardInfo.Plot}}</p>
+                <p class="movieDetails"><span>Runtime: </span>{{movieCardInfo.Runtime}}</p>
+                <p class="movieDetails"><span>Genre: </span>{{movieCardInfo.Genre}}</p>
+                <p class="movieDetails"><span>Director: </span> {{movieCardInfo.Director}}</p>
+                <p class="movieDetails castInfo"><span>Cast: </span> {{movieCardInfo.Actors}}</p>
+            </div>
+            <div class="ratings" layout="row" layout-align="space-around center">
+                <div layout="column" layout-align="center">
+                    <div class="imdb">
+                        <img src="img/imdbmod.png">
+                    </div>
+                    <div class="ratingnumber" style="margin-top: 22px;">
+                        <p>{{movieCardInfo.imdbRating}}</p>
+                    </div>
+                </div>
+                <div layout="column" layout-align="center">
+                    <div class="rotten">
+                        <img src="img/certified.png">
+                    </div>
+                    <div class="ratingnumber">
+                        <p>{{movieCardInfo.tomatoMeter}}</p>
+                    </div>
+                </div>
+                <div layout="column" layout-align="center">
+                    <div class="metacritic">
+                        <img src="img/metacritic.png">
+                    </div>
+                    <div class="ratingnumber">
+                        <p>{{movieCardInfo.Metascore}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="moviePoster" layout="column" layout-align="center">
+            <md-media-lg>
+                <img src="{{movieCardInfo.Poster}}">
+            </md-media-lg>
+        </div>
     </div>
-  </ion-content> --> -->
+    <div layout="row" layout-align="space-between center">
+        <div class="actionButton">
+            <md-card-actions class="shareMovie" layout="row">
+                <md-button class="md-raised hatebutton">MEH!!</md-button>
+            </md-card-actions>
+        </div>
+        <div class="actionButton">
+            <md-card-actions class="shareMovie" layout="row">
+                <md-button ng-click="searchCtrl.shareMovie(movieCardInfo);" class="md-raised">SHARE</md-button>
+            </md-card-actions>
+        </div>
+    </div>
+    <div class="addComment" layout="row">
+        <md-input-container>
+            <input type="text" placeholder="Say something to Share.....">
+        </md-input-container>
+    </div>
+</md-card>
+    </md-content>
+</ion-content>
+<ion-footer>
+    <div class="footerTabs tabs-striped tabs-icon-top">
+      <div class="tabs">
+          <a class="tab-item active" href="#/channels">
+              <i class="icon ion-android-people"></i> Chats
+          </a>
+          <a class="tab-item" href="#/lists">
+              <i class="icon ion-ios-heart-outline"></i> Favorites
+          </a>
+          <a class="tab-item" href="#/search">
+              <i class="icon ion-ios-search"></i> Search
+          </a>
+      </div>
+  </div>
+</ion-footer>

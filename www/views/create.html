@@ -1,4 +1,20 @@
-<div class="header">
+<md-card>
+	<h3>Create Channel</h3>
+	<md-input-container>
+		<input type="text" placeholder="Channel Name" ng-model="createCtrl.channelname">
+	</mf-input-container>
+	<md-button ng-click="createCtrl.addChanneltoUser(createCtrl.channelname)" class="md-raised md-primary custbutton">Done</md-button>
+</md-card>
+
+
+
+
+
+
+
+
+
+<!-- <div class="header">
   <h1>Create a channel</h1>
 </div>
 
@@ -7,4 +23,4 @@
     <input type="text" class="form-control" placeholder="Channel Name" ng-model="channelsCtrl.channelname">
   </div>
   <input ng-click="channelsCtrl.addChanneltoUser(channelsCtrl.channelname)" type="button" class="btn btn-default" value="Create Channel">
-</form>
+</form> -->

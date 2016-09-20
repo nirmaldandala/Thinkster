@@ -33,4 +33,17 @@ slackclone.controller('AuthCtrl', function(Auth, $state, $rootScope){
 	    authCtrl.error = error;
 	  });
 	};
+
+	authCtrl.init = function () {
+		$('.fab').click(function(e) {
+		if(event.target.className === 'zmdi zmdi-account-add' || event.target.className === 'zmdi zmdi-close'){
+			$(this).toggleClass('active');
+
+		  $(this).children('i').toggleClass('zmdi-account-add');
+		  $(this).children('i').toggleClass('zmdi-close');
+		}
+		});
+	};
+
+	authCtrl.init();
 });

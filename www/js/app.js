@@ -51,10 +51,10 @@ slackclone.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    $stateProvider.state('channels.create', {
+    $stateProvider.state('create', {
       url: '/create',
-      templateUrl: 'views/create.html',
-      controller: 'ChannelsCtrl as channelsCtrl'
+      controller: 'CreateCtrl as createCtrl',
+      templateUrl: 'views/create.html'
     })
     $stateProvider.state('search', {
       url: '/search',

@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 
 body {
-	font-family: 'Montserrat', serif;
+	font-family: 'Work Sans', serif;
     font-size: 1em;
 }
 
@@ -23,18 +23,108 @@ body {
 
 .fullMovieCard h3 {
 	margin: 0 auto;
+	font-family: 'Work Sans', serif;
+}
+
+.fullMovieCard {
+	box-shadow: none;
+}
+
+.fullMovieCard .cardTitle {
+	padding-top: 15px;
+}
+
+.fullMovieCard .movieText {
+	height: 365px;
 }
 
 .fullMovieCard .movieInfo div {
-	font-size: 0.75em;
+	font-size: 1em;
 }
 
-.fullMovieCard .moviePlot {
+.fullMovieCard .fullMoviePlot {
+	width: 100%;
+	height: 430px;
+	line-height: 150%;
+	padding: 0px 10px 5px 10px;
+	font-size: 0.85em;
+	margin-top: 50px;
+}
+
+.fullMovieCard .fullMoviePlot .moviePlot {
+	text-align: justify;
+	padding: 10px;
+	margin-bottom: 0;
+}
+
+.fullMovieCard .movieText .plotInfo {
+	height: 110px;
+	overflow: auto;
+}
+
+.fullMovieCard .movieText .castInfo {
+	height: 50px;
+	overflow: auto;
+}
+
+.fullMovieCard .moviePoster{
+	width: 70%;
+	height: 470px;
+	background: #000;
+	box-shadow: 0 0 5px #c2c2c2;
+	margin-top: 10px;
+	margin: 0 auto;
+}
+
+.fullMovieCard .moviePoster md-media-lg {
+	width: 99%;
+	margin: 0 auto;
+}
+
+.fullMovieCard .ratings {
+	width: 70%;
+	height: 90px;
+	margin: 0 auto;
+}
+
+.fullMovieCard .movieDetails {
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.fullMovieCard .movieDetails span {
+	font-weight: bold;
+}
+
+.fullMovieCard .imdb {
+	width: 40px;
+}
+
+.fullMovieCard .rotten {
+	width: 25px;
+	margin-left: 3px;
+	margin-bottom: 2px;
+}
+
+.fullMovieCard .metacritic {
+	width: 25px;
+	margin-left: 3px;
+	margin-bottom: 2px;
+}
+
+.fullMovieCard .actionButton {
 	width: 50%;
 }
 
-.fullMovieCard .movieInfo .moviePoster{
-	width: 50%;
+.shareMovie .hatebutton {
+	background: rgb(255,82,82) !important;
+	color: #fff;
+}
+
+.fullMovieCard .ratingnumber {
+	font-size: 2em;
+	text-align: center;
+	margin-top: 15px;
 }
 
 .movieCard {
@@ -54,7 +144,7 @@ body {
 
 .movieCard .md-media-lg {
 	width: 140px;
-	height: 190px;
+	height: auto;
 	box-shadow: 0 0 5px #c2c2c2;
 }
 
@@ -66,6 +156,15 @@ body {
 	text-align: center;
 	color: #585775;
 	font-size: 1.0em !important;
+	font-family: 'Work Sans', serif;
+}
+
+.fullMovieCard h2 {
+	text-align: center;
+	color: #585775;
+	font-size: 1.30em;
+	margin: 0 auto;
+	font-family: 'Work Sans', serif;
 }
 
 .movieCard md-card-actions {
@@ -76,11 +175,11 @@ body {
 	margin-right: 10px;
 	position: relative;
     bottom: 15px;
+    width: 60%;
 }
 
 .movieCard .movieInfo div {
 	font-size: 0.75em;
-	width: 100px;
 }
 
 .movieCard .movieDesc {
@@ -100,28 +199,34 @@ body {
 	margin-left: 5px;
 }
 
-.movieCard .movieLogo .imdb{
+.imdb{
 	width: 40px;
 	margin-left: 3px;
 	margin-top: 2px;
 }
 
-.movieCard .movieLogo .rotten{
+.thumbnailText {
+	padding-left: 20px;
+}
+
+.rotten{
 	width: 27px;
 }
 
-.movieCard .movieLogo .metacritic{
+.metacritic{
 	width: 30px;
 }
 
-.movieCard .shareMovie {
-	margin-top: 5px;
+.shareMovie {
+	margin-top: 5px !important;
 }
 
-.movieCard .shareMovie button{
-	background: #72d572 !important;
+.shareMovie button{
+	background: #0ca20c !important;
     width: 100%;
     cursor: pointer;
+    color: #fff !important;
+    margin-top: 5px;
 }
 
 .searchMovie img {

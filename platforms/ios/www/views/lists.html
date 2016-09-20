@@ -12,41 +12,9 @@
 				        <md-card-title>
 				          <md-card-title-text>
 				            <span class="md-headline"><h2>{{item.Title}}</h2></span>
-							<!-- <div class="movieInfo" layout="row" layout-align="space-between center">
-								<div>{{item.Year}}</div>
-								
-								<div>{{item.Runtime}}</div>
-								
-								<div>{{item.Genre}}</div>
-							</div> -->
 							<div class="movieDesc" layout="column">
-								<div> {{item.Plot | limitTo:channelsviewCtrl.numlimit}} </div>
-								<div><a ng-click="channelsviewCtrl.readMore()">Read More</a></div>
+								<div> {{item.Plot}} </div>
 							</div>
-							<!-- <div class="movieLogo" layout="row" layout-align="space-between center">
-									<div class="imdb">
-										<img src="../img/imdbmod.png">
-									</div>
-									<div class="rotten">
-										<img src="../img/certified.png">
-									</div>
-									<div class="metacritic">
-										<img src="../img/metacritic.png">
-									</div>	
-								</div>
-								<div class="ratingDesc" layout="row" layout-align="space-between center">
-									<div>
-										<p>{{item.imdbRating}}</p>
-									</div>
-									<div>
-										<p>{{item.tomatoMeter}}</p>
-									</div>
-									<div>
-										<p>{{item.Metascore}}</p>
-									</div>
-								</div>
-							</div> -->
-				            <!-- <md-button>Remove</md-button> -->
 				          </md-card-title-text>
 				          <md-card-title-media>
 				            <div class="md-media-lg card-media">
@@ -62,4 +30,19 @@
 		  	</md-list>
 	  </md-content>
 	</ion-content>
+		  <ion-footer>
+	  	<div class="footerTabs tabs-striped tabs-icon-top">
+		    <div class="tabs">
+		        <a class="tab-item active" href="#/channels">
+		            <i class="icon ion-android-people"></i> Chats
+		        </a>
+		        <a class="tab-item" href="#/lists">
+		            <i class="icon ion-ios-heart-outline"></i> Favorites
+		        </a>
+		        <a class="tab-item" href="#/search">
+		            <i class="icon ion-ios-search"></i> Search
+		        </a>
+		    </div>
+		</div>
+	</ion-footer>
 </ion-view>

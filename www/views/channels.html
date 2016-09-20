@@ -1,14 +1,9 @@
 <ion-pane>
   <ion-header-bar>
-  	<i ui-sref="contacts" class="ion-plus-circled addUserIcon"></i>
+  		<div class="createChannel">
+	        <md-button class="md-raised md-primary custbutton" ui-sref="create">Create</md-button>
+		</div>
   </ion-header-bar>
-
-	    <!-- <div class="channel-list">
-		  <div class="list-head">Channels</div>
-		  <div class="channel" ng-repeat="channel in channelsCtrl.channels">
-		    <a ui-sref="channels.messages({channelId: channel.$id})" ui-sref-active="selected"># {{ channel.name }}</a>
-		  </div>
-		</div> -->
 	<ion-content>
 		<md-content>
 			<md-list flex>
@@ -20,52 +15,22 @@
 			        </div>
 			        <md-divider></md-divider>
 		        </md-list-item>
-				<!-- <md-list-item ng-repeat="channel in channelsCtrl.channels">
-					<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch layout="row">
-						<a href="#" ui-sref="channelview"
-				           class="item item-thumbnail-left" ng-click="channelsCtrl.gotoMsg(channel.channelName)">
-				          <img ng-src="http://www.goldtalk.com/forum/images/avatars/all/characters/80x80_films0018.jpg">
-				          <h2>{{ channel.channelName }}</h2>
-			        	</a>
-					</md-card>
-				</md-list-item> -->
 			</md-list>
 		</md-content>
 	</ion-content>
-
-		<div class="list">
-	        <div class="channel create">
-		    		<a ui-sref="channels.create">+ create channel</a>
-		  		</div>
-      	</div>
-
-	    <div class="my-info">
-	      <img class="user-pic" ng-src="{{ channelsCtrl.getGravatar(channelsCtrl.profile.$id) }}" />
-	      <div class="user-info">
-	        <div class="user-name">
-	          {{ channelsCtrl.profile.displayName }}
-	        </div>
-
-	        <div class="options">
-	          <a ui-sref="profile">edit profile</a>
-	          <button ng-click="channelsCtrl.addContact()">Add Contact</button>
-	          <p>Contacts</p>
-	          <ul>
-	          	<li ng-repeat="contact in channelsCtrl.contacts">
-	          		<input type='checkbox' value='{{ contact.phoneNumbers[0].value }}'></input>
-					{{ contact.phoneNumbers[0].value }}
-				</li>
-	          </ul>
-	          /
-	          <a href="#" ng-click="channelsCtrl.logout()">logout</a>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	  <ul>
-
-	  </ul>
-	  <div class="message-pane">
-		<ui-view></ui-view>
-	  </div>
 </ion-pane>
+<ion-footer>
+  	<div class="footerTabs tabs-striped tabs-icon-top">
+	    <div class="tabs">
+	        <a class="tab-item active" href="#/channels">
+	            <i class="icon ion-android-people"></i> Chats
+	        </a>
+	        <a class="tab-item" href="#/lists">
+	            <i class="icon ion-ios-heart-outline"></i> Favorites
+	        </a>
+	        <a class="tab-item" href="#/search">
+	            <i class="icon ion-ios-search"></i> Search
+	        </a>
+	    </div>
+	</div>
+</ion-footer>

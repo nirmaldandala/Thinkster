@@ -4,6 +4,13 @@ body {
 	font-family: 'Work Sans', serif;
     font-size: 1em;
 }
+a:not(.md-button) {
+	color: #3282ed;
+}
+
+.custbutton {
+	background-color: #3282ed !important;
+}
 
 .item-image {
 	width: 81%;
@@ -21,6 +28,11 @@ body {
     cursor: pointer;
 }
 
+.createChannel {
+	position: absolute;
+	right: 10px;
+}
+
 .fullMovieCard h3 {
 	margin: 0 auto;
 	font-family: 'Work Sans', serif;
@@ -28,6 +40,10 @@ body {
 
 .fullMovieCard {
 	box-shadow: none;
+}
+
+.fullMovieCard .cardTitle {
+	padding-top: 15px;
 }
 
 .fullMovieCard .movieText {
@@ -39,11 +55,12 @@ body {
 }
 
 .fullMovieCard .fullMoviePlot {
-	width: 50%;
-	height: 450px;
+	width: 100%;
+	height: 430px;
 	line-height: 150%;
 	padding: 0px 10px 5px 10px;
 	font-size: 0.85em;
+	margin-top: 50px;
 }
 
 .fullMovieCard .fullMoviePlot .moviePlot {
@@ -63,11 +80,12 @@ body {
 }
 
 .fullMovieCard .moviePoster{
-	width: 50%;
-	height: 430px;
+	width: 70%;
+	height: 470px;
 	background: #000;
 	box-shadow: 0 0 5px #c2c2c2;
 	margin-top: 10px;
+	margin: 0 auto;
 }
 
 .fullMovieCard .moviePoster md-media-lg {
@@ -76,8 +94,9 @@ body {
 }
 
 .fullMovieCard .ratings {
-	width: 100%;
+	width: 70%;
 	height: 90px;
+	margin: 0 auto;
 }
 
 .fullMovieCard .movieDetails {
@@ -137,7 +156,7 @@ body {
 
 .movieCard .md-media-lg {
 	width: 140px;
-	height: 190px;
+	height: auto;
 	box-shadow: 0 0 5px #c2c2c2;
 }
 
@@ -155,7 +174,7 @@ body {
 .fullMovieCard h2 {
 	text-align: center;
 	color: #585775;
-	font-size: 1.60em;
+	font-size: 1.10em;
 	margin: 0 auto;
 	font-family: 'Work Sans', serif;
 }
@@ -168,11 +187,11 @@ body {
 	margin-right: 10px;
 	position: relative;
     bottom: 15px;
+    width: 60%;
 }
 
 .movieCard .movieInfo div {
 	font-size: 0.75em;
-	width: 100px;
 }
 
 .movieCard .movieDesc {
@@ -215,7 +234,7 @@ body {
 }
 
 .shareMovie button{
-	background: #0ca20c !important;
+	background: #3282ed !important;
     width: 100%;
     cursor: pointer;
     color: #fff !important;
